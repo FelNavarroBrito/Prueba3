@@ -1,0 +1,29 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <header>
+
+        <div class="header-content container">
+            <h1>Productos</h1>
+        </div>
+
+    </header>
+    {% for p in prod %}
+    <div class="contenedor-padre">
+        <div class="contenedor">
+            <div class="card" style="width: 18rem;">
+                <img src="{{p.imagenUrl.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{p.nombre}}</h5>
+                    <p class="card-text">{{p.precio}}</p>
+                    <a href="carrito.html" class="btn btn-primary">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    {% endblock %}
